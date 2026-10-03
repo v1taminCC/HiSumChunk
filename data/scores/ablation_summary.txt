@@ -1,0 +1,15 @@
+========================================================================
+End-to-end ablation: three-dimension means (valid records, zero rows excluded)
+========================================================================
+
+  variant                           wo_h1        wo_h2      wo_h1h2     noise_50
+  grounding                          4.74         4.70         4.65         4.75
+  correctness                        4.75         4.73         4.69         4.78
+  hallucination_absence              4.73         4.71         4.62         4.75
+
+  wo_h1: 577 valid records
+  wo_h2: 575 valid records
+  wo_h1h2: 573 valid records
+  noise_50: 574 valid records
+
+Reference (full HiSumChunk): grounding 4.77 / correctness 4.79 / hallucination 4.76 (n=577)

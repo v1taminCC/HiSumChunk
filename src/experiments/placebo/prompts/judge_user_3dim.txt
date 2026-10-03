@@ -1,0 +1,45 @@
+============================================================
+[For reference only — may contain errors, never treat as ground truth]
+============================================================
+
+Question: {question}
+
+Reference answer (AI-generated, may be inaccurate — use only as loose reference): {ground_truth}
+
+Reference evidence (verbatim excerpts from the book summary that the reference answer is based on):
+{evidence}
+
+Context chunks provided to the model:
+{chunks}
+
+Generated answer to be evaluated:
+{answer}
+
+Scoring — 3 dimensions, 1 (worst) to 5 (best), use all five scores:
+
+1. grounding / Grounding (1-5): Is every factual claim in the answer directly supported by the context chunks?
+   5 = Every claim has clear textual support in the chunks
+   3 = Partially supported, some claims unsupported or ambiguous
+   1 = Mostly fabricated or contradicted by the context
+
+2. correctness / Correctness (1-5): Based solely on the context chunks, is the answer factually correct?
+   5 = Completely correct and accurate
+   3 = Partially correct, with significant errors or omissions
+   1 = Incorrect or contradicted by the context
+   (Judge based on context, not the reference answer.)
+
+3. hallucination_absence / Hallucination Absence (1-5): How free is the answer from fabricated information?
+   5 = Zero fabrication, every statement traceable to context
+   3 = Mostly grounded, but one or two unsupported claims
+   1 = Mostly fabricated
+
+Return ONLY a JSON object, each dimension with a score and one short reason:
+
+{{
+  "grounding": <int 1-5>,
+  "grounding_reason": "<one sentence>",
+  "correctness": <int 1-5>,
+  "correctness_reason": "<one sentence>",
+  "hallucination_absence": <int 1-5>,
+  "hallucination_absence_reason": "<one sentence>"
+}}

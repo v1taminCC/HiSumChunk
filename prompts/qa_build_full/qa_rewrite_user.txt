@@ -1,0 +1,21 @@
+给定问答条目：
+{qa_json}
+
+请完成以下任务：
+1. 将 question 改写成更自然、更像真实用户提问的问题。
+2. 检查这个问题是否属于应当剔除的类型，例如：
+   - 章节总结题
+   - 过于宽泛的问题
+   - 不能由局部证据支持的问题
+   - 与其他常见问法高度重复的机械问题
+3. 保持 answer、question_type、difficulty 的语义一致；如果原值明显不合适，可做小幅修正。
+
+请返回严格 JSON：
+{{
+  "question": "...",
+  "answer": "...",
+  "question_type": "fact|causal|relation|event_transition|evidence_summary",
+  "difficulty": "easy|medium|hard",
+  "should_drop": false,
+  "drop_reason": "若 should_drop=true，则说明原因；否则为空字符串"
+}}

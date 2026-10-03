@@ -1,0 +1,34 @@
+{
+  "2-has_title.py::Below are {} pages of a document": {
+    "script": "2-has_title.py",
+    "prompt": "Below are {} pages of a document. Based on these {} pages, determine whether this document contains level-1 titles and level-2 titles.\nNote: Sentence-initial enumerative guides such as \"first, second, third...\", \"for one thing, for another...\" etc., no matter whether numbered or not, are only logical sequencing phrases within the body text and should NOT be considered as titles.\nGiven text: \nPage 1{} \nPage 2{} \nPage 3{}\nPage 4{}\nReturn the following JSON format:\n{{\n    \"has_level1_titles\": \"yes or no\",\n    \"has_level2_titles\": \"yes or no\",\n    \"reasoning\": \"Why you think titles exist or not, 300 word explanation\"\n}}"
+  },
+  "3-clear_noise.py::Below are {} consecutive pages": {
+    "script": "3-clear_noise.py",
+    "prompt": "Below are {} consecutive pages of a document. Based on these {} consecutive pages, determine whether the document contains headers, footers, or page numbers. \nGiven text: \nPage 1 \"{first}\" \nPage 2 \"{second}\" \nPage 3 \"{third}\"\nPage 4 \"{fourth}\"\nReturn the following JSON format:\n{{\n    \"page_1_has_header\": \"yes or no\",\n    \"page_1_header_content\": \"Specific header content. If a header exists, return its specific content; otherwise return empty.\",\n    \"page_1_has_footer\": \"yes or no\",\n    \"page_1_footer_content\": \"Specific footer content. If a footer exists, return its specific content; otherwise return empty.\",\n    \"page_2_has_header\": \"yes or no\",\n    \"page_2_header_content\": \"Specific header content. If a header exists, return its specific content; otherwise return empty.\",\n    \"page_2_has_footer\": \"yes or no\",\n    \"page_2_footer_content\": \"Specific footer content. If a footer exists, return its specific content; otherwise return empty.\",\n    \"page_3_has_header\": \"yes or no\",\n    \"page_3_header_content\": \"Specific header content. If a header exists, return its specific content; otherwise return empty.\",\n    \"page_3_has_footer\": \"yes or no\",\n    \"page_3_footer_content\": \"Specific footer content. If a footer exists, return its specific content; otherwise return empty.\",\n    \"page_4_has_header\": \"yes or no\",\n    \"page_4_header_content\": \"Specific header content. If a header exists, return its specific content; otherwise return empty.\",\n    \"page_4_has_footer\": \"yes or no\",\n    \"page_4_footer_content\": \"Specific footer content. If a footer exists, return its specific content; otherwise return empty.\",\n    \"reasoning\": \"Your reasoning, 500 word explanation\"\n}}"
+  },
+  "3-clear_noise.py::Below is one page of a document": {
+    "script": "3-clear_noise.py",
+    "prompt": "Below is one page of a document. Based on this page, determine whether it contains a table of contents / page-number index (e.g., abundant \"numbers\", \"leader dots\", \"dotted lines\", \"ellipses\", \"guide lines\", etc.).\nNote: standalone page numbers appearing in headers/footers do NOT count as a table of contents index.\nGiven text: \n\"{page}\" \nReturn the following JSON format:\n{{\n    \"answer\": \"yes or no\",\n    \"reasoning\": \"Why you think this page does or does not contain a catalog/table-of-contents-like page-number index, 300 word explanation\"\n}}"
+  },
+  "4.2-Split_Level.py::Identify all level-1 and level-2 titles": {
+    "script": "4.2-Split_Level.py",
+    "prompt": "Identify all level-1 and level-2 titles in the following text and output them sequentially in JSON.\nGiven text:\n\"{text}\"\nReturn the following JSON format:\n{{\n    \"has_titles\": \"yes or no\",\n    \"title_1\": \"title content, empty string if not present\",\n    \"title_2\": \"title content, empty string if not present\",\n    \"title_3\": \"title content, empty string if not present\",\n    \"title_4\": \"title content, empty string if not present\",\n    If there are more titles, continue until none remain.\n    \"reasoning\": \"Why you think the above titles exist or not, 500 words explanation\"\n}}"
+  },
+  "5-Outline_A.py::Based on the following content, summariz": {
+    "script": "5-Outline_A.py",
+    "prompt": "Based on the following content, summarize an outline of {word_limit} words or fewer. The outline must accurately capture the information in the content, strictly based on the content, without adding any subjective content.\nGiven text:\n\"{content}\"\nReturn the following JSON format:\n{{\n    \"reasoning\": \"Do you think the summarized outline has hallucinations? Explain in 300 words or fewer\",\n    \"outline\": \"outline content in {word_limit} words or fewer\"\n}}"
+  },
+  "5-Outline_A.py::multi-agent outline generation expert": {
+    "script": "5-Outline_A.py",
+    "prompt": "You are a multi-agent outline generation expert. The following content is the first (upper) part of a continuous text. Please summarize an outline of 500 words or fewer based on this content to pass to the next agent.\nThe outline must accurately capture the information, strictly based on the content, without adding any subjective content.\nGiven text:\n\"{content}\"\nReturn the following JSON format:\n{{\n    \"reasoning\": \"Do you think the summarized outline has hallucinations? Explain in 300 words or fewer\",\n    \"outline\": \"outline content in 500 words or fewer\"\n}}"
+  },
+  "6-Merge_H2.py::Below are the summaries of {} chunks": {
+    "script": "6-Merge_H2.py",
+    "prompt": "Below are the summaries of {} chunks. Assign them an ID (starting from 1), and logically divide them into one or more H2 title regions (it can also be a single region).\nNote: The chunks are sequential, i.e., the summary order must not be shuffled. Do not omit any given chunks.\n\nSummaries:\n{}\n\nReturn strictly in the following JSON format (do not include Markdown code block markers, return raw JSON):\n{{\n    \"reasoning\": \"What is the thematic flow between chunks? Explain in 500 words or fewer\",\n    \"merge_range\": \n    {{\n        \"region_1_id_range\": [start_id, end_id],\n        \"region_2_id_range\": [start_id, end_id]\n        If there are more regions, continue until none remain.\n    }}\n}}"
+  },
+  "7-Outline_B.py::Based on the following text, summarize a": {
+    "script": "7-Outline_B.py",
+    "prompt": "Based on the following text, summarize an outline of {word_limit} words or fewer. The outline must accurately capture the information in the text, strictly based on the text, without adding any subjective content.\nGiven text:\n\"{content}\"\nReturn the following JSON format:\n{{\n    \"reasoning\": \"Do you think the summarized outline has hallucinations? Explain in 300 words or fewer\",\n    \"outline\": \"outline content in {word_limit} words or fewer\"\n}}"
+  }
+}

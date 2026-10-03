@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.ipynb_checkpoints/
+*.ipynb
+
+# Environments
+.env
+*.env
+.venv/
+venv/
+
+# Credentials
+*secret*
+*token*
+credentials*
+api_key*
+*.key
+
+# Logs and local runtime files
+*.log
+logs/
+workspace/
+
+# Large regenerated artifacts at the repository scale
+raw_data/
+data/full/
+split_output/
+book_txt/
+*.pt
+*.pth
+*.bin
+*.safetensors
+
+# Models
+models/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+~$*
+
+# The example book ships its own complete artifacts; keep them even though the
+# generic rules above target large regenerated trees.
+!example_data/**

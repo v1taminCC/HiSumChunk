@@ -1,0 +1,6 @@
+Question: {question}
+
+Context chunks from the book:
+{chunks_text}
+
+Answer the question based ONLY on the context above. Be thorough and specific — include relevant names, events, and causal connections from the chunks. A good answer is 2–5 sentences and reads like a self-contained explanation. If the context lacks the needed information, clearly state that instead of guessing.

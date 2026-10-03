@@ -1,0 +1,17 @@
+Summary faithfulness audit (claim-vs-source)
+==========================================================================
+audited units: 1478
+
+level     units  primary_bad   strict_bad     claims bad_claims
+H1          297         7( 2.4%)        12( 4.0%)       4041         20
+H2         1181        18( 1.5%)        22( 1.9%)       7298         46
+ALL        1478        25( 1.7%)        34( 2.3%)      11339         66
+
+primary = unit contains >=1 fact claim labelled unsupported or contradicted
+strict  = additionally counts interpretation claims and entity mismatches
+
+polluted questions (any unfaithful unit in top-5, primary criterion): 32
+
+note: bad_claims counts all claim types; the paper's claim-level figure (58, 0.51%)
+uses the fact-type primary criterion (42 contradicted + 16 unsupported); the
+remaining 8 interpretation-type claims give 66 (0.58%) under the all-type criterion.

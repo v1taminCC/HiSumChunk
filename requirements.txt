@@ -1,0 +1,19 @@
+# ---- Data & figures (results/) ----
+numpy>=1.24
+matplotlib>=3.7
+
+# ---- Full pipeline (optional: running the experiments end to end) ----
+# torch>=2.0.0
+# sglang>=0.2.0
+# sentence-transformers>=2.2.0
+# transformers>=4.30.0
+# requests>=2.28.0
+# PyPDF2>=3.0.0
+# rouge-score>=0.1.2
+# bert-score>=0.3.13
+# spacy>=3.5.0          # then: python -m spacy download en_core_web_sm
+# scipy>=1.10
+# statsmodels>=0.14
+# pymc>=5.10
+# arviz>=0.17
+# pandas>=2.0

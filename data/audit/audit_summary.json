@@ -1,0 +1,27 @@
+{
+  "units": 1478,
+  "by_level": {
+    "H2": {
+      "n": 1181,
+      "primary": 18,
+      "strict": 22,
+      "claims": 7298,
+      "bad": 46
+    },
+    "H1": {
+      "n": 297,
+      "primary": 7,
+      "strict": 12,
+      "claims": 4041,
+      "bad": 20
+    }
+  },
+  "all": {
+    "n": 1478,
+    "primary": 25,
+    "strict": 34,
+    "claims": 11339,
+    "bad": 66
+  },
+  "polluted_questions_primary": 32
+}

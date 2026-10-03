@@ -1,0 +1,32 @@
+Mechanism experiment: five context variants under a FIXED retrieval set
+==========================================================================
+arms: A=full  B=remove H2 prefix  P=H2 replaced by length-matched irrelevant
+      summary  C=remove H1 slice  D=remove both
+common valid items n=575 over 21 books
+
+== arm means ==
+arm   grounding correctness     halluc    composite
+A         4.765      4.793      4.763        94.35
+B         4.725      4.720      4.704        92.91
+P         4.697      4.710      4.689        92.46
+C         4.677      4.697      4.683        92.14
+D         4.650      4.682      4.640        91.43
+
+== delta vs arm A (95% CI, Holm within dimension over 4 arms) ==
+arm      dimension          delta                 95% CI     p_holm
+B        grounding         -0.040 [  -0.099,   +0.018]     0.1867
+B        correctness       -0.073 [  -0.120,   -0.027]     0.0078
+B        hallucination_absence    -0.059 [  -0.185,   +0.100]     0.8343
+P        grounding         -0.068 [  -0.120,   +0.004]     0.1276
+P        correctness       -0.083 [  -0.143,   +0.002]     0.0590
+P        hallucination_absence    -0.075 [  -0.201,   +0.112]     0.8343
+C        grounding         -0.089 [  -0.160,   -0.024]     0.0150
+C        correctness       -0.096 [  -0.152,   -0.033]     0.0078
+C        hallucination_absence    -0.080 [  -0.210,   +0.081]     0.8343
+D        grounding         -0.115 [  -0.167,   -0.057]     0.0040
+D        correctness       -0.111 [  -0.162,   -0.061]     0.0004
+D        hallucination_absence    -0.123 [  -0.229,   +0.005]     0.2404
+
+Key finding: arm P (length-matched but content-irrelevant summary) is LOWER than
+arm B (no summary at all) on the composite, i.e. the benefit of the injected
+summary depends on its content matching the chunk, not merely on extra text.

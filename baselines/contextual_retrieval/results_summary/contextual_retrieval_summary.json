@@ -1,0 +1,10 @@
+{
+  "records": 577,
+  "valid": 577,
+  "means": {
+    "grounding": 4.6707,
+    "correctness": 4.7314,
+    "hallucination_absence": 4.6932
+  },
+  "composite100": 92.461
+}

@@ -1,0 +1,51 @@
+{
+  "ours": {
+    "mean_purity": 58.4302,
+    "median_purity": 56.01,
+    "mean_top5_words": 3306.3,
+    "mean_largest_block": 769.7,
+    "mean_chapters": 3.02
+  },
+  "ctxretrieval": {
+    "mean_purity": 52.5105,
+    "median_purity": 46.0159,
+    "mean_top5_words": 2912.3,
+    "mean_largest_block": 673.1,
+    "mean_chapters": 3.31
+  },
+  "lumberchunker": {
+    "mean_purity": 38.0288,
+    "median_purity": 34.99,
+    "mean_top5_words": 8263.0,
+    "mean_largest_block": 2775.5,
+    "mean_chapters": 4.42
+  },
+  "raptor": {
+    "mean_purity": 37.9649,
+    "median_purity": 29.27,
+    "mean_top5_words": 3542.0,
+    "mean_largest_block": 1024.1,
+    "mean_chapters": 4.29
+  },
+  "semanticembed": {
+    "mean_purity": 36.9104,
+    "median_purity": 34.1,
+    "mean_top5_words": 5683.8,
+    "mean_largest_block": 1620.9,
+    "mean_chapters": 4.37
+  },
+  "lbdsemantic": {
+    "mean_purity": 36.1647,
+    "median_purity": 33.55,
+    "mean_top5_words": 6725.2,
+    "mean_largest_block": 1926.3,
+    "mean_chapters": 4.4
+  },
+  "fixed": {
+    "mean_purity": 34.175,
+    "median_purity": 39.8,
+    "mean_top5_words": 5047.8,
+    "mean_largest_block": 1020.5,
+    "mean_chapters": 4.22
+  }
+}

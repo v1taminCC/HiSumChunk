@@ -1,0 +1,120 @@
+{
+  "n": 575,
+  "arms": [
+    "A",
+    "B",
+    "P",
+    "C",
+    "D"
+  ],
+  "delta_vs_A": {
+    "grounding|B": {
+      "delta": -0.04,
+      "ci": [
+        -0.099,
+        0.0183
+      ],
+      "p_raw": 0.1867,
+      "p_holm": 0.1867
+    },
+    "grounding|C": {
+      "delta": -0.0887,
+      "ci": [
+        -0.1604,
+        -0.0245
+      ],
+      "p_raw": 0.005,
+      "p_holm": 0.015
+    },
+    "grounding|D": {
+      "delta": -0.1148,
+      "ci": [
+        -0.1667,
+        -0.0575
+      ],
+      "p_raw": 0.001,
+      "p_holm": 0.004
+    },
+    "grounding|P": {
+      "delta": -0.0678,
+      "ci": [
+        -0.1195,
+        0.0035
+      ],
+      "p_raw": 0.0638,
+      "p_holm": 0.1276
+    },
+    "correctness|B": {
+      "delta": -0.073,
+      "ci": [
+        -0.1203,
+        -0.0272
+      ],
+      "p_raw": 0.0037,
+      "p_holm": 0.0078
+    },
+    "correctness|C": {
+      "delta": -0.0957,
+      "ci": [
+        -0.1522,
+        -0.033
+      ],
+      "p_raw": 0.0026,
+      "p_holm": 0.0078
+    },
+    "correctness|D": {
+      "delta": -0.1113,
+      "ci": [
+        -0.1622,
+        -0.0612
+      ],
+      "p_raw": 0.0001,
+      "p_holm": 0.0004
+    },
+    "correctness|P": {
+      "delta": -0.0835,
+      "ci": [
+        -0.1426,
+        0.0023
+      ],
+      "p_raw": 0.059,
+      "p_holm": 0.059
+    },
+    "hallucination_absence|B": {
+      "delta": -0.0591,
+      "ci": [
+        -0.1854,
+        0.0998
+      ],
+      "p_raw": 0.4008,
+      "p_holm": 0.8343
+    },
+    "hallucination_absence|C": {
+      "delta": -0.08,
+      "ci": [
+        -0.2104,
+        0.0812
+      ],
+      "p_raw": 0.2781,
+      "p_holm": 0.8343
+    },
+    "hallucination_absence|D": {
+      "delta": -0.1235,
+      "ci": [
+        -0.2293,
+        0.0048
+      ],
+      "p_raw": 0.0601,
+      "p_holm": 0.2404
+    },
+    "hallucination_absence|P": {
+      "delta": -0.0748,
+      "ci": [
+        -0.2006,
+        0.1116
+      ],
+      "p_raw": 0.343,
+      "p_holm": 0.8343
+    }
+  }
+}

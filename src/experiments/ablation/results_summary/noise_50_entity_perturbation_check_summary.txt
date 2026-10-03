@@ -1,0 +1,27 @@
+noise_50 entity perturbation check summary
+============================================================
+
+The noise_50 variant simulates medium-strength entity noise in hierarchical summaries. It perturbs named entities in H1/H2 summary units while keeping the original body text unchanged.
+
+Global perturbation statistics:
+- Books: 21
+- Summary units: 18,875
+- Selected summary units: 9,436
+- Entity mentions: 15,276
+- Replaced entity mentions: 9,029
+- Affected body chunks through H2 prefixes: 4,363
+- Warnings: 0
+
+Final split comparison:
+- Total items: 19,885
+- Changed items: 5,519
+- H1 changes: 1,156
+- Body chunk prefix changes: 4,363
+
+Body integrity check:
+- Checked body chunks: 17,271
+- Changed body chunks: 4,363
+- Bad cases: 0
+- Inconsistent H2 keys: 0
+
+Conclusion: the entity perturbation was successfully applied. The limited score drop of noise_50 is therefore better explained by end-to-end RAG robustness: the original body text remains correct, top-k retrieval provides redundancy, re-embedding can avoid some noisy chunks, and the answer generator often relies on body evidence rather than noisy summary prefixes.

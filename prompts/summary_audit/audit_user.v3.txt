@@ -1,0 +1,10 @@
+[Summary Type]
+{level_desc}
+
+[Summary]
+{summary}
+
+[Source Text]
+{source}
+
+Audit the summary against the source text above, following the rules exactly. Output only the JSON object.

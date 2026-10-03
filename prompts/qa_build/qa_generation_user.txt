@@ -1,0 +1,58 @@
+Book title: {book_title}
+Chapter or section id: {chapter_id}
+BookSum summary_text:
+"""
+{chapter_text}
+"""
+
+Create up to {qa_per_chapter} high-quality QA pairs based only on the BookSum `summary_text` above.
+
+Requirements:
+1. `question`, `answer`, and `reason` must all be in natural English.
+2. Do not generate Chinese text in `question`, `answer`, or `reason`.
+3. `evidence_text` must be copied verbatim from the given `summary_text`; do not translate or paraphrase it.
+4. The question must be a realistic retrieval query that can be answered with local evidence.
+5. Do not create broad chapter-summary questions.
+6. Prefer questions that target a clear local fact, causal relation, contrast, event transition, or locally supported conclusion.
+7. Each answer should be thorough and self-contained, typically 2–5 sentences. Include relevant context — names of people and places, causal reasoning, and outcomes — rather than terse single-phrase responses.
+8. Each QA pair must include 1 to 3 core evidence snippets.
+9. Use one of these `question_type` values: fact, causal, relation, event_transition, evidence_summary.
+10. Use one of these `difficulty` values: easy, medium, hard.
+11. If the summary text is too short or does not support {qa_per_chapter} good QA pairs, return fewer QA pairs rather than lowering quality.
+12. Avoid classroom-like or prompt-like openings such as:
+    - According to the text
+    - In this summary
+    - What does the passage say about
+    - How does this passage explain
+    - What is described in this section
+13. Questions should start directly with the information need and should not include unnecessary preambles.
+
+Bad question patterns to avoid:
+- "What is this chapter about?"
+- "What is the main idea of this section?"
+- "Summarize what happens here."
+- Any question that requires broad overall summarization rather than local evidence.
+
+Good questions should:
+- Point to a specific event, claim, relationship, motive, contrast, or consequence
+- Be answerable from the provided evidence snippets
+- Sound like a concrete query a reader might search for
+- Produce answers that are rich enough to stand alone without re-reading the question
+
+Return strict JSON in exactly this format:
+{{
+  "qas": [
+    {{
+      "question": "A natural, specific English question",
+      "answer": "A thorough English answer grounded in the summary_text, with relevant context and details",
+      "question_type": "fact|causal|relation|event_transition|evidence_summary",
+      "difficulty": "easy|medium|hard",
+      "evidence_units": [
+        {{
+          "evidence_text": "A continuous verbatim span copied from the summary_text",
+          "reason": "A brief English explanation of how this evidence supports the answer"
+        }}
+      ]
+    }}
+  ]
+}}

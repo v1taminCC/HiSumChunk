@@ -1,0 +1,42 @@
+{
+  "dimensions": [
+    "grounding",
+    "correctness",
+    "hallucination_absence"
+  ],
+  "rows": [
+    {
+      "variant": "ours",
+      "n_records": "N/A (from main experiment)",
+      "grounding": 4.77,
+      "correctness": 4.79,
+      "hallucination_absence": 4.76
+    },
+    {
+      "variant": "noise_50",
+      "n_records": 574,
+      "grounding": 4.75,
+      "correctness": 4.78,
+      "hallucination_absence": 4.75
+    },
+    {
+      "variant": "wo_h1h2",
+      "n_records": 573,
+      "grounding": 4.65,
+      "correctness": 4.69,
+      "hallucination_absence": 4.62
+    },
+    {
+      "reference": "noise_50_vs_ours",
+      "grounding": -0.02,
+      "correctness": -0.01,
+      "hallucination_absence": -0.01
+    },
+    {
+      "reference": "noise_50_vs_wo_h1h2",
+      "grounding": 0.1,
+      "correctness": 0.09,
+      "hallucination_absence": 0.13
+    }
+  ]
+}

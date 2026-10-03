@@ -1,0 +1,51 @@
+{
+  "ours": {
+    "grounding": 4.766031,
+    "correctness": 4.793761,
+    "hallucination_absence": 4.764298,
+    "composite": 94.367418,
+    "n": 577
+  },
+  "raptor": {
+    "grounding": 4.694444,
+    "correctness": 4.717014,
+    "hallucination_absence": 4.708333,
+    "composite": 92.664931,
+    "n": 576
+  },
+  "ctxretrieval": {
+    "grounding": 4.670711,
+    "correctness": 4.731369,
+    "hallucination_absence": 4.693241,
+    "composite": 92.461005,
+    "n": 577
+  },
+  "lumberchunker": {
+    "grounding": 4.644714,
+    "correctness": 4.65338,
+    "hallucination_absence": 4.528596,
+    "composite": 90.222415,
+    "n": 577
+  },
+  "lbdsemantic": {
+    "grounding": 4.632582,
+    "correctness": 4.632582,
+    "hallucination_absence": 4.578856,
+    "composite": 90.36684,
+    "n": 577
+  },
+  "semanticembed": {
+    "grounding": 4.599653,
+    "correctness": 4.60312,
+    "hallucination_absence": 4.545927,
+    "composite": 89.572501,
+    "n": 577
+  },
+  "fixed": {
+    "grounding": 4.577123,
+    "correctness": 4.589255,
+    "hallucination_absence": 4.507799,
+    "composite": 88.951473,
+    "n": 577
+  }
+}

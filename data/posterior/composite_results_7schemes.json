@@ -1,0 +1,61 @@
+{
+  "means": {
+    "ours": 94.367,
+    "fixed": 88.951,
+    "lumberchunker": 90.222,
+    "lbdsemantic": 90.367,
+    "semanticembed": 89.573,
+    "raptor": 92.665,
+    "ctxretrieval": 92.461
+  },
+  "pairwise": [
+    {
+      "other": "fixed",
+      "delta": 5.416,
+      "ci_lo": 3.096,
+      "ci_hi": 7.85,
+      "p": 0.0,
+      "holm": 0.0003
+    },
+    {
+      "other": "lbdsemantic",
+      "delta": 4.001,
+      "ci_lo": 2.052,
+      "ci_hi": 6.115,
+      "p": 0.0001,
+      "holm": 0.0005
+    },
+    {
+      "other": "semanticembed",
+      "delta": 4.795,
+      "ci_lo": 1.971,
+      "ci_hi": 7.632,
+      "p": 0.0004,
+      "holm": 0.0018
+    },
+    {
+      "other": "lumberchunker",
+      "delta": 4.145,
+      "ci_lo": 0.511,
+      "ci_hi": 7.344,
+      "p": 0.0131,
+      "holm": 0.0394
+    },
+    {
+      "other": "raptor",
+      "delta": 1.693,
+      "ci_lo": -0.539,
+      "ci_hi": 3.797,
+      "p": 0.0609,
+      "holm": 0.1219
+    },
+    {
+      "other": "ctxretrieval",
+      "delta": 1.906,
+      "ci_lo": -1.614,
+      "ci_hi": 4.502,
+      "p": 0.1246,
+      "holm": 0.1246
+    }
+  ]
+}

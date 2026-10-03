@@ -1,0 +1,35 @@
+给定切片文本：
+"""
+{chunk_text}
+"""
+
+给定中文问题：
+"""
+{question}
+"""
+
+请只基于以上“给定切片文本”和“给定中文问题”，生成一个与中文问题语义等价、并面向英文原文检索优化的英文问题 retrieval_question_en。
+
+重要约束：
+1. 只能使用给定切片文本和给定中文问题中的信息。
+2. 不要使用 answer、evidence、reason 或任何其他问答字段；你当前也不会看到这些字段。
+3. retrieval_question_en 必须问的是与给定中文问题同一个问题，不要扩大、缩小或改变问题意图。
+4. retrieval_question_en 必须是自然英文问题，适合作为检索 query；它不是逐字翻译，而是面向英文原文 chunk 的检索增强问题。
+5. 必须尽量保留或自然融入切片英文原文中的关键检索词，包括人物名、地名、称谓、事件关键词、概念名、动作词、分类词、判断词和核心短语。
+6. 如果中文问题里的人名或地名是中文译名、音译或概括说法，请根据切片文本恢复为英文原文写法。
+7. 如果中文问题比较概括，而切片英文原文中有能直接支持该问题的关键表达，请在不改变问题意图的前提下，把这些英文关键词自然融入 retrieval_question_en。
+8. 对分类、对比、原因、态度、特点类问题，优先保留英文原文中的分类项、对比项、原因词、态度词或特点词。
+9. 如果切片文本开头包含中文摘要，不能只机械翻译中文摘要；英文问题必须优先贴近切片中的英文原文表达和关键词。
+10. 不要添加切片文本和中文问题都没有的新事实。
+11. 不要回答问题，只生成问题。
+12. 不要生成多个候选问题。
+
+检索增强示例：
+- 如果中文问题问“如何分类/区分某事物”，而英文原文给出了 A、B 两类，则 retrieval_question_en 应尽量写成 “How does X distinguish between A and B?” 或 “How does X classify Y as A or B?”，不要只写成 “How does X classify Y?”。
+- 如果英文原文包含直接支持问题的核心短语，例如 entirely new、annexed、hereditary state、contempt、pride、lost consciousness 等，应在自然、不改变问题意图的前提下优先保留这些短语。
+- 差的 retrieval_question_en 通常过于泛化，只翻译了中文问题，却丢掉了英文原文中的关键检索词。
+
+请返回严格 JSON：
+{{
+  "retrieval_question_en": "English retrieval question here"
+}}

@@ -1,0 +1,56 @@
+{
+  "dimensions": [
+    "grounding",
+    "correctness",
+    "hallucination_absence"
+  ],
+  "rows": [
+    {
+      "variant": "ours",
+      "n_records": "N/A (from main experiment)",
+      "grounding": 4.77,
+      "correctness": 4.79,
+      "hallucination_absence": 4.76
+    },
+    {
+      "variant": "wo_h1",
+      "n_records": 577,
+      "grounding": 4.74,
+      "grounding_delta": -0.03,
+      "correctness": 4.75,
+      "correctness_delta": -0.04,
+      "hallucination_absence": 4.73,
+      "hallucination_absence_delta": -0.03
+    },
+    {
+      "variant": "wo_h2",
+      "n_records": 575,
+      "grounding": 4.7,
+      "grounding_delta": -0.07,
+      "correctness": 4.73,
+      "correctness_delta": -0.06,
+      "hallucination_absence": 4.71,
+      "hallucination_absence_delta": -0.05
+    },
+    {
+      "variant": "wo_h1h2",
+      "n_records": 573,
+      "grounding": 4.65,
+      "grounding_delta": -0.12,
+      "correctness": 4.69,
+      "correctness_delta": -0.1,
+      "hallucination_absence": 4.62,
+      "hallucination_absence_delta": -0.14
+    },
+    {
+      "variant": "noise_50",
+      "n_records": 574,
+      "grounding": 4.75,
+      "grounding_delta": -0.02,
+      "correctness": 4.78,
+      "correctness_delta": -0.01,
+      "hallucination_absence": 4.75,
+      "hallucination_absence_delta": -0.01
+    }
+  ]
+}

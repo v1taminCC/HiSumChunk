@@ -1,0 +1,32 @@
+{
+  "A": {
+    "grounding": 4.765217391304348,
+    "correctness": 4.79304347826087,
+    "hallucination_absence": 4.763478260869565,
+    "composite": 94.34782608695652
+  },
+  "B": {
+    "grounding": 4.725217391304348,
+    "correctness": 4.72,
+    "hallucination_absence": 4.7043478260869565,
+    "composite": 92.91304347826087
+  },
+  "C": {
+    "grounding": 4.676521739130434,
+    "correctness": 4.697391304347826,
+    "hallucination_absence": 4.683478260869565,
+    "composite": 92.14492753623189
+  },
+  "D": {
+    "grounding": 4.650434782608696,
+    "correctness": 4.681739130434782,
+    "hallucination_absence": 4.64,
+    "composite": 91.43478260869566
+  },
+  "P": {
+    "grounding": 4.697391304347826,
+    "correctness": 4.7095652173913045,
+    "hallucination_absence": 4.688695652173913,
+    "composite": 92.46376811594203
+  }
+}

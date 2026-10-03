@@ -1,0 +1,59 @@
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+REPO_ROOT = BASE_DIR.parent.parent
+EXAMPLE_DATA_DIR = REPO_ROOT / "example_data"
+EXAMPLE_BOOK_DIR = EXAMPLE_DATA_DIR / "Far From the Madding Crowd"
+
+QA_BUILD_DIR = BASE_DIR / "qa_build"
+QA_DRAFT_DIR = QA_BUILD_DIR / "data" / "qa_drafts"
+QA_DRAFT_BY_BOOK_DIR = QA_DRAFT_DIR / "by_book"
+QA_FINAL_DIR = QA_BUILD_DIR / "data" / "qa_final"
+QA_FINAL_BY_BOOK_DIR = QA_FINAL_DIR / "by_book"
+
+SCHEME_OURS_DIR = BASE_DIR / "retrieval_ours"
+SCHEME_FIXED_DIR = BASE_DIR / "retrieval_fixed"
+BOOKSUM_SPLIT_DIR = EXAMPLE_BOOK_DIR
+BOOKSUM_BOOK_TXT_DIR = EXAMPLE_BOOK_DIR
+BOOKSUM_SPLIT_JSON_DIR = EXAMPLE_BOOK_DIR
+
+FIXED_SPLIT_JSON_DIR = EXAMPLE_BOOK_DIR
+LUMBER_SPLIT_JSON_DIR = EXAMPLE_BOOK_DIR
+LBD_SPLIT_JSON_DIR = EXAMPLE_BOOK_DIR
+SEMANTIC_SPLIT_JSON_DIR = EXAMPLE_BOOK_DIR
+RAPTOR_SPLIT_JSON_DIR = EXAMPLE_BOOK_DIR
+MODEL_PATH = os.environ.get("EMBEDDING_MODEL_PATH", "<MODEL_DIR>/Qwen3-Embedding-0.6B")
+
+DATA_DIR = BASE_DIR / "data"
+QUERY_DIR = DATA_DIR / "queries"
+CHUNK_DIR = DATA_DIR / "chunks"
+RELEVANCE_DIR = DATA_DIR / "relevance"
+METADATA_DIR = DATA_DIR / "metadata"
+
+EMBEDDING_DIR = BASE_DIR / "embeddings"
+RUNS_DIR = BASE_DIR / "runs"
+RESULTS_DIR = BASE_DIR / "results"
+TABLES_DIR = RESULTS_DIR / "tables"
+CASES_DIR = RESULTS_DIR / "cases"
+REPORTS_DIR = RESULTS_DIR / "reports"
+
+BOOK_QUERY_DIR = QUERY_DIR / "by_book"
+BOOK_CHUNK_DIR = CHUNK_DIR / "by_book"
+BOOK_RELEVANCE_DIR = RELEVANCE_DIR / "by_book"
+BOOK_EMBEDDING_DIR = EMBEDDING_DIR / "by_book"
+IN_BOOK_RUN_DIR = RUNS_DIR / "in_book"
+GLOBAL_RUN_DIR = RUNS_DIR / "global"
+
+DEFAULT_TOP_K = 10
+DEFAULT_BATCH_SIZE = 1
+DEFAULT_DEVICE = "cuda"
+NORMALIZE_EMBEDDINGS = True
+DEFAULT_EVIDENCE_MARGIN = 120
+SUPPORTED_SCHEMES = ["ours", "fixed", "booksum_split", "lumberchunker", "lbdsemantic", "semanticembed", "raptor"]
+SPLIT_GLOB = "*_split.json"
+FIXED_SPLIT_SUFFIX = "_Fixed1024W_NoOverlap_split.json"
+LUMBER_SPLIT_SUFFIX = "_LumberChunker_split.json"
+LBD_SPLIT_SUFFIX = "_LBDSemantic_split.json"
+SEMANTIC_SPLIT_SUFFIX = "_SemanticEmbed_split.json"
+RAPTOR_SPLIT_SUFFIX = "_RAPTOR_nodes.json"

@@ -1,0 +1,17 @@
+请检查以下问答条目：
+{qa_json}
+
+请重点判断：
+1. question 是否清晰且可由局部证据回答；
+2. answer 是否与 evidence_units 一致；
+3. evidence_units 是否足够、是否过宽、是否存在明显不支撑答案的情况；
+4. 是否存在幻觉、过度概括、证据不足等问题。
+
+请返回严格 JSON：
+{{
+  "is_valid": true,
+  "issues": [],
+  "suggested_answer": "如果原答案需要更精确，可给出修正后的答案；否则返回原答案或等价答案",
+  "evidence_quality": "good|medium|poor",
+  "needs_manual_review": false
+}}
